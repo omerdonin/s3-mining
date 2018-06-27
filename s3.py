@@ -38,23 +38,6 @@ def check_code(r, name):
     print name+bcolors.ENDC
     return
 
-
-'''
-def get_code(url, name):
-  try:
-	r = requests.get(url)
-  except requests.exceptions.ConnectionError:
-	r.status_code = "Connection refused, waiting for a green light"
-	sleep(5)
-
-  check_code(r, name)
-  if r.status_code == 403 or r.status_code == 200:
-    for ext in common:
-      r = requests.get(url + ext)
-      check_code(r, name + ext)
-'''
-
-
 def get_code(url, name, counter):
     if counter < 3:
         try:
